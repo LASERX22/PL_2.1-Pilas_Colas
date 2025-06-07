@@ -6,9 +6,11 @@ import Models.NodeGeneric;
 
 public class StackG<T> {
     private NodeGeneric<T> top;
+    private int size=0;
 
     public StackG() {
         this.top = null;
+        this.size=0;
 
     }
 
@@ -16,6 +18,7 @@ public class StackG<T> {
         NodeGeneric<T> newNode = new NodeGeneric<>(value); // Crea un nuevo nodo
         newNode.setNext(top); // El siguiente del nuevo nodo es el actual tope
         top = newNode; // Actualiza el tope a ser el nuevo nodo
+        size++;
     }
 
     public T pop() {
@@ -24,6 +27,7 @@ public class StackG<T> {
         }
         T value = top.getValue(); // Obtiene el valor del nodo superior
         top = top.getNext(); // Elimina el nodo superior
+        size--;
         return value; // Devuelve el valor del nodo eliminado
     }
 
@@ -45,5 +49,9 @@ public class StackG<T> {
             aux = aux.getNext(); // Avanza al siguiente nodo
         }
         System.out.println(); // Imprime una nueva línea al final
+    }
+
+    public int getSize(){
+        return size;
     }
 }
