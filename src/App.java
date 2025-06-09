@@ -15,10 +15,10 @@ public class App {
         System.out.println("Ordenamiento de un Stack");
         StackG<Integer> numeros = new StackG<Integer>();
         StackSorter ordenador = new StackSorter(); 
-        numeros.push(5);
-        numeros.push(1);
-        numeros.push(4);
         numeros.push(2);
+        numeros.push(4);
+        numeros.push(1);
+        numeros.push(5);
         System.out.print("Input: ");
         numeros.printStack();
         System.out.print("Output: ");

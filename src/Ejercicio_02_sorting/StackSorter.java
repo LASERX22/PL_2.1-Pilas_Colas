@@ -15,7 +15,7 @@ public class StackSorter {
         }
         while(!stack.isEmpty()) { // El bucle seguira hasta que el stack a ordenar este vacio
             int menor=stack.pop(); //Extraigo el ultimo elemento de la pila original
-            while(!newStack.isEmpty() && newStack.peek()<menor){ //El bucle seguira mientras la pila auxiliar tenga elementos y el ultimo de la pila auxiliar sea menor al ultimo elemento de la pila original
+            while(!newStack.isEmpty() && newStack.peek()>menor){ //El bucle seguira mientras la pila auxiliar tenga elementos y el ultimo de la pila auxiliar sea menor al ultimo elemento de la pila original
                 stack.push(newStack.pop()); //agrego a la pila original el ultimo elemento de la pila auxiliar
             }
             newStack.push(menor); //De no cumplirse una de las dos condiciones, se agrega a la pila auxiliar el ultimo elemento de la pila original
